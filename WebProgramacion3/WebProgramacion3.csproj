@@ -124,6 +124,8 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="PagAlumnos.aspx" />
+    <Content Include="PagEditar.aspx" />
     <Content Include="PagInicio.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -212,6 +214,20 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="PagAlumnos.aspx.cs">
+      <DependentUpon>PagAlumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagAlumnos.aspx.designer.cs">
+      <DependentUpon>PagAlumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagEditar.aspx.cs">
+      <DependentUpon>PagEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagEditar.aspx.designer.cs">
+      <DependentUpon>PagEditar.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagInicio.aspx.cs">
       <DependentUpon>PagInicio.aspx</DependentUpon>

@@ -9,10 +9,6 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
         }
         .login-container {
@@ -22,10 +18,44 @@
             padding: 20px;
             width: 100%;
             max-width: 400px;
+            margin: 20px auto;
+        }
+        /* Cambio en el color de la barra superior y del botón */
+        .navbar-light .navbar-nav .nav-link {
+            color: #008080; /* Color del texto en la barra superior */
+        }
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: #00b3b3; /* Color del texto en la barra superior al pasar el mouse */
+        }
+        .navbar-light .navbar-brand {
+            color: #008080; /* Color del texto del logo en la barra superior */
+        }
+        .navbar-light .navbar-brand:hover {
+            color: #00b3b3; /* Color del texto del logo en la barra superior al pasar el mouse */
+        }
+        .btn-teal {
+            background-color: #008080; /* Color de fondo del botón */
+            border-color: #008080; /* Color del borde del botón */
+            color: #fff; /* Color del texto del botón */
+        }
+        .btn-teal:hover {
+            background-color: #00b3b3; /* Color de fondo del botón al pasar el mouse */
+            border-color: #00b3b3; /* Color del borde del botón al pasar el mouse */
         }
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Programacion 3</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Registrarse</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <form id="form1" runat="server">
         <div class="login-container">
             <h2 class="text-center">Iniciar sesión</h2>
@@ -39,7 +69,7 @@
                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control" />
             </div>
             <div class="form-group">
-                <asp:Button ID="btnLogin" runat="server" Text="Iniciar sesión" OnClick="btnLogin_Click" CssClass="btn btn-primary btn-block" />
+                <asp:Button ID="btnLogin" runat="server" Text="Iniciar sesión" OnClick="btnLogin_Click" CssClass="btn btn-teal btn-block" />
             </div>
         </div>
     </form>

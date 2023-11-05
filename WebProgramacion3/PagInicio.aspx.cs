@@ -15,7 +15,7 @@ namespace WebProgramacion3
         {
             if (!Page.IsPostBack)
             {
-                lblMensaje.Text = string.Empty;
+
             }
            
 
@@ -48,5 +48,6 @@ namespace WebProgramacion3
             }
             return false;
         }
+
     }
 }
