@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PagAlumnos.aspx.cs" Inherits="WebProgramacion3.PagAlumnos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PagPrincipal.aspx.cs" Inherits="WebProgramacion3.PagPrincipal" %>
 
 <!DOCTYPE html>
 
@@ -43,7 +43,7 @@
             background-color: #555;
         }
 
-        /* Pie de página */
+        /* Pie de pagina */
         footer {
             background-color: #333;
             color: white;
@@ -52,16 +52,6 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-        }
-
-        /* Cointener Alumnos */
-        .alumno-container {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-        }
-        .alumno-label {
-            font-weight: bold;
         }
     </style>
 </head>
@@ -76,30 +66,9 @@
             </ul>
         </div>
 
-        <!-- Contenido de la página de Alumnos -->
+        <!-- Contenido de tu página principal aquí -->
         <div>
-            <h2>Lista de Alumnos</h2>
-            
-            <div class="alumno-container">
-                <label class="alumno-label">Nombre:</label>
-                <label>Nombre del Alumno</label>
-            </div>
-
-            <div class="alumno-container">
-                <label class="alumno-label">DNI:</label>
-                <label>DNI del Alumno</label>
-            </div>
-
-            <div class="alumno-container">
-                <label class="alumno-label">Estado:</label>
-                <label>Estado del Alumno</label>
-            </div>
-
-            <!-- Botones de navegación -->
-            <asp:Button ID="btnFirst" runat="server" Text="<||" OnClick="btnFirst_Click" />
-            <asp:Button ID="btnPrev" runat="server" Text="<<" OnClick="btnPrev_Click" />
-            <asp:Button ID="btnNext" runat="server" Text=">>" OnClick="btnNext_Click" />
-            <asp:Button ID="btnLast" runat="server" Text="||>" OnClick="btnLast_Click" />
+            Contenido de la página principal.
         </div>
 
         <footer>

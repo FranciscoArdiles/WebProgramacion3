@@ -11,7 +11,7 @@ namespace WebProgramacion3
 {
 
 
-    public partial class PagEditar
+    public partial class PagPrincipal
     {
 
         /// <summary>

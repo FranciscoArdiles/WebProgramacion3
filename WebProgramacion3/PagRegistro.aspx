@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PagInicio.aspx.cs" Inherits="WebProgramacion3.PagInicio" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PagRegistro.aspx.cs" Inherits="WebProgramacion3.PagRegistro" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -82,6 +82,7 @@
             background-color: #00b3b3;
             border-color: #00b3b3;
         }
+
     </style>
 </head>
 <body>
@@ -99,22 +100,28 @@
 
         <!-- Contenido de la página -->
         <div class="login-container">
-            <h2>Iniciar sesión</h2>
+            <h2>Registrarse</h2>
             <asp:Label ID="lblMensaje" runat="server" Text="" CssClass="text-danger text-center" Visible="false" />
             <div class="form-group">
-                <div style="display: inline-block; width: 120px; text-align: right; margin-right: 10px;">
+                <div style="display: inline-block; width: 190px; text-align: right; margin-right: 10px;">
                     <label for="txtUsername">Usuario:</label>
                 </div>
                 <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control" />
             </div>
             <div class="form-group">
-                <div style="display: inline-block; width: 120px; text-align: right; margin-right: 10px;">
+                <div style="display: inline-block; width: 190px; text-align: right; margin-right: 10px;">
                     <label for="txtPassword">Contraseña:</label>
                 </div>
                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control" />
             </div>
             <div class="form-group">
-                <asp:Button ID="btnLogin" runat="server" Text="Iniciar sesión" OnClick="btnLogin_Click" CssClass="btn btn-teal" />
+                <div style="display: inline-block; width: 190px; text-align: right; margin-right: 10px;">
+                    <label for="txtConfirmPassword">Confirmar Contraseña:</label>
+                </div>
+                <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" CssClass="form-control" />
+            </div>
+            <div class="form-group">
+                <asp:Button ID="btnRegister" runat="server" Text="Registrarse" OnClick="btnRegister_Click" CssClass="btn btn-teal" />
             </div>
         </div>
 
