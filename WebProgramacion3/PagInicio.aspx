@@ -85,17 +85,18 @@
     </style>
 </head>
 <body>
+     <div>
+            <ul class="navbar">
+                <li class="nav-item"><a href="PagAlumnos.aspx">Alumnos</a></li>
+                <li class="nav-item"><a href="PagEditar.aspx">Profesores</a></li>
+                <li class="nav-item-right"><a href="PagRegistro.aspx">Registrarse</a></li>
+                <li class="nav-item-right"><a href="PagInicio.aspx">Iniciar Sesión</a></li>
+            </ul>
+        </div>
     <form id="form1" runat="server">
 
         <!-- Barra de navegación -->
-        <div>
-            <ul class="navbar">
-                <li class="nav-item"><a href="#">Alumnos</a></li>
-                <li class="nav-item"><a href="#">Profesores</a></li>
-                <li class="nav-item-right"><a href="#">Registrarse</a></li>
-                <li class="nav-item-right"><a href="#">Iniciar Sesión</a></li>
-            </ul>
-        </div>
+       
 
         <!-- Contenido de la página -->
         <div class="login-container">
