@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Página Principal</title>
+    <title>Editar Profesores</title>
     <style>
         /* Estilos barra de navegación */
         ul.navbar {
@@ -42,8 +42,7 @@
         li.nav-item-right a:hover {
             background-color: #555;
         }
-
-        /* Pie de pagina */
+        /* Pie de página */
         footer {
             background-color: #333;
             color: white;
@@ -52,6 +51,11 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+        /* Estilo para el GridView */
+        .gridview-style {
+            font-size: 1.2em; /* Aumentar el tamaño de la fuente */
+            width: 80%; /* Aumentar el ancho del GridView */
         }
     </style>
 </head>
@@ -66,9 +70,49 @@
             </ul>
         </div>
 
-        <!-- Contenido de tu página principal aquí -->
+        <!-- Contenido de la página de Edición de Profesores -->
         <div>
-            Contenido de la página principal.
+            <h2>Editar Profesores</h2>
+            
+            <!-- GridView para mostrar y editar los profesores -->
+            <div id="divDgv" runat="server" visible="true">
+                <asp:GridView ID="gvProfesores" runat="server" AutoGenerateColumns="false" OnRowEditing="gvProfesores_RowEditing" CssClass="gridview-style">
+                    <Columns>
+                        <asp:TemplateField HeaderText="Acciones">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="lnkEdit" runat="server" CommandName="Edit" Text="Editar" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="ID" HeaderText="ID" />
+                        <asp:BoundField DataField="APELLIDO" HeaderText="Apellido" />
+                        <asp:BoundField DataField="NOMBRE" HeaderText="Nombre" />
+                    </Columns>
+                </asp:GridView>
+            </div>
+            <!-- Div para Editar -->
+            <div id="divControl" runat="server" visible="false">
+                <h3>Editar Profesores</h3>
+                <div class="row">
+                    <div class="col-lg-2 text-right">
+                        <asp:Label ID="lblId" runat="server" Text="ID : "></asp:Label>
+                    </div>
+                    <div class="col-lg-3">
+                        <asp:TextBox ID="txtId" Font-Bold="true" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                        <asp:Label ID="lblApellido" runat="server" Text="Apellido : "></asp:Label>
+                    </div>
+                    <div class="col-lg-3">
+                        <asp:TextBox ID="txtApellido" Font-Bold="true" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="col-lg-2 text-right">
+                        <asp:Label ID="lblNombre" runat="server" Text="Nombre : "></asp:Label>
+                    </div>
+                    <div class="col-lg-3">
+                        <asp:TextBox ID="txtNombre" Font-Bold="true" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="col-lg-2 text-right">
+                </div>
+            </div>
         </div>
 
         <footer>

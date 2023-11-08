@@ -81,18 +81,21 @@
             <h2>Lista de Alumnos</h2>
             
             <div class="alumno-container">
-                <label class="alumno-label">Nombre:</label>
-                <label>Nombre del Alumno</label>
+                <label class="alumno-label" id="NombreLabel">Nombre:</label>
+                 <asp:Label ID="lblNombre" runat="server" Text="Nombre del Alumno"></asp:Label>
+                <%--<label id="lbl">Nombre del Alumno</label>--%>
             </div>
 
             <div class="alumno-container">
-                <label class="alumno-label">DNI:</label>
-                <label>DNI del Alumno</label>
+                <label class="alumno-label" id="DniLabel">DNI:</label>
+                 <asp:Label ID="lblDni" runat="server" Text="DNI del Alumno"></asp:Label>
+                <%--<label id="lblDni">DNI del Alumno</label>--%>
             </div>
 
             <div class="alumno-container">
-                <label class="alumno-label">Estado:</label>
-                <label>Estado del Alumno</label>
+                <label class="alumno-label" id="EstadoLabel">Estado:</label>
+                 <asp:Label ID="lblEstado" runat="server" Text="Estado del Alumno"></asp:Label>
+                <%--<label id="lblEstado">Estado del Alumno</label>--%>
             </div>
 
             <!-- Botones de navegación -->
