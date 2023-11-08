@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebProgramacion3.Conexion;
 
 namespace WebProgramacion3
 {
@@ -21,7 +22,7 @@ namespace WebProgramacion3
         {
             string pSQL = "select * from prueba.profesores";
 
-            //ManConex mconex = new Curso3_FirstApp.ManConex();
+            ManConex mconex = new ManConex();
             string cadConex = System.Configuration.ConfigurationManager.ConnectionStrings["ConStrMySQL"].ConnectionString;
 
             if (cadConex.Equals(""))
