@@ -20,6 +20,16 @@ namespace WebProgramacion3
         }
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombre.Text.Trim()) || string.IsNullOrEmpty(txtPassword.Text.Trim()) || string.IsNullOrEmpty(txtConfirmPassword.Text.Trim()) || string.IsNullOrEmpty(txtUsername.Text.Trim()))
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "Todos los campos deben estar completos";
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+
+
             if (txtPassword.Text.Trim() == txtConfirmPassword.Text.Trim())
             {
                 string Nombre = txtNombre.Text.Trim();  
@@ -49,8 +59,9 @@ namespace WebProgramacion3
                 }
                 catch (Exception ex)
                 {
-                    
-                    Response.Write("Error: " + ex.Message);
+                    lblMensaje.ForeColor = System.Drawing.Color.Red;
+                    lblMensaje.Text = "Error: " + ex.Message;
+                    //Response.Write("Error: " + ex.Message);
                 }
                 finally
                 {

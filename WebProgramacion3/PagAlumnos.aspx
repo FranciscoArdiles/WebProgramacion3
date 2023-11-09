@@ -59,9 +59,22 @@
             border: 1px solid #ccc;
             padding: 10px;
             margin: 10px;
+            font-size: x-large;
+
         }
         .alumno-label {
             font-weight: bold;
+        }
+        .btn-teal {
+            background-color: #008080;
+            border-color: #008080;
+            color: #fff;
+            font-size: x-large;
+            margin: 20px auto;
+        }
+        .btn-teal:hover {
+            background-color: #00b3b3;
+            border-color: #00b3b3;
         }
     </style>
 </head>
@@ -79,7 +92,7 @@
 
         <!-- Contenido de la página de Alumnos -->
         <div>
-            <h2>Lista de Alumnos</h2>
+            <h1>Lista de Alumnos</h1>
             
             <div class="alumno-container">
                 <label class="alumno-label" id="NombreLabel">Nombre:</label>
@@ -100,10 +113,10 @@
             </div>
 
             <!-- Botones de navegación -->
-            <asp:Button ID="btnFirst" runat="server" Text="<||" OnClick="btnFirst_Click" />
-            <asp:Button ID="btnPrev" runat="server" Text="<<" OnClick="btnPrev_Click" />
-            <asp:Button ID="btnNext" runat="server" Text=">>" OnClick="btnNext_Click" />
-            <asp:Button ID="btnLast" runat="server" Text="||>" OnClick="btnLast_Click" />
+            <asp:Button ID="btnFirst" runat="server" Text="<<" OnClick="btnFirst_Click" CssClass="btn-teal" />
+            <asp:Button ID="btnPrev" runat="server" Text="<" OnClick="btnPrev_Click" CssClass="btn-teal" />
+            <asp:Button ID="btnNext" runat="server" Text=">" OnClick="btnNext_Click" CssClass="btn-teal" />
+            <asp:Button ID="btnLast" runat="server" Text=">>" OnClick="btnLast_Click" CssClass="btn-teal" />
         </div>
 
         <footer>

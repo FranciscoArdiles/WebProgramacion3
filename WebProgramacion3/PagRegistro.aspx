@@ -19,33 +19,33 @@
             float: left;
         }
 
-            li.nav-item a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
+        li.nav-item a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-                li.nav-item a:hover {
-                    background-color: #555;
-                }
+        li.nav-item a:hover {
+            background-color: #555;
+        }
         /* Elementos a la derecha */
         li.nav-item-right {
             float: right;
         }
 
-            li.nav-item-right a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
+        li.nav-item-right a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-                li.nav-item-right a:hover {
-                    background-color: #555;
-                }
+        li.nav-item-right a:hover {
+            background-color: #555;
+        }
 
         /* Pie de pagina */
         footer {
@@ -84,10 +84,10 @@
             margin: 20px auto;
         }
 
-            .btn-teal:hover {
-                background-color: #00b3b3;
-                border-color: #00b3b3;
-            }
+        .btn-teal:hover {
+            background-color: #00b3b3;
+            border-color: #00b3b3;
+        }
     </style>
 </head>
 <body>

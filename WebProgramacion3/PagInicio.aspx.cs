@@ -51,7 +51,6 @@ namespace WebProgramacion3
 
                     if (storedHashedPassword == hashedPassword)
                     {
-                        // Autenticación exitosa, redirige al usuario a la página de inicio.
                         Response.Redirect("PagAlumnos.aspx");
                     }
                     else
@@ -70,8 +69,7 @@ namespace WebProgramacion3
 
         private bool EsCredencialValida(string username, string password)
         {
-            // Debes implementar tu lógica de autenticación aquí, como verificar contra una base de datos.
-            // Este es solo un ejemplo básico.
+
             if (username == "usuario" && password == "contrasena")
             {
                 return true;

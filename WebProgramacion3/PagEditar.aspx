@@ -20,33 +20,33 @@
             float: left;
         }
 
-            li.nav-item a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
+        li.nav-item a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-                li.nav-item a:hover {
-                    background-color: #555;
-                }
+        li.nav-item a:hover {
+            background-color: #555;
+        }
         /* Elementos a la derecha */
         li.nav-item-right {
             float: right;
         }
 
-            li.nav-item-right a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
+        li.nav-item-right a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-                li.nav-item-right a:hover {
-                    background-color: #555;
-                }
+        li.nav-item-right a:hover {
+            background-color: #555;
+        }
         /* Pie de página */
         footer {
             background-color: #333;
@@ -59,8 +59,31 @@
         }
         /* Estilo para el GridView */
         .gridview-style {
-            font-size: 1.2em; /* Aumentar el tamaño de la fuente */
-            width: 80%; /* Aumentar el ancho del GridView */
+            font-size: 1.2em; 
+            width: 80%; 
+            font-size: x-large;
+        }
+        .btn-teal {
+            background-color: #008080;
+            border-color: #008080;
+            color: #fff;
+            font-size: x-large;
+        }
+        .btn-teal:hover {
+            background-color: #00b3b3;
+            border-color: #00b3b3;
+        }
+        /* Centrar el contenido de la columna Acciones */
+        .gridview-center-actions {
+            text-align: center;
+        }
+        /* Estilo para labels y textboxes en divControl */
+        .divControl-label {
+            font-size: x-large;
+        }
+        .divControl-textbox {
+            font-size: x-large;
+            width: 100%;
         }
     </style>
 </head>
@@ -78,7 +101,7 @@
 
         <!-- Contenido de la página -->
         <div>
-            <h2>Editar Profesores</h2>
+            <h1>Lista de Profesores</h1>
         </div>
             <!-- GridView de los profesores -->
             <div id="divDgv" runat="server" visible="true">
@@ -86,8 +109,9 @@
                     <Columns>
                         <asp:TemplateField HeaderText="Acciones">
                             <ItemTemplate>
-                                <asp:LinkButton ID="lnkEdit" runat="server" CommandName="Editando" CommandArgument='<%#Eval("id") %>' Text="Editar" />
+                                <asp:LinkButton ID="lnkEdit" runat="server" CommandName="Editando" CommandArgument='<%#Eval("id") %>' Text="Editar" CssClass="btn btn-teal" Font-Bold="true" />
                             </ItemTemplate>
+                            <ItemStyle CssClass="gridview-center-actions" />
                         </asp:TemplateField>
                         <asp:BoundField DataField="ID" HeaderText="ID" />
                         <asp:BoundField DataField="APELLIDO" HeaderText="Apellido" />
@@ -97,29 +121,30 @@
             </div>
             <!-- Div para Editar -->
             <div id="divControl" runat="server" visible="false">
-                <h3>Editar Profesores</h3>
+                <h2>Editar Profesores</h2>
                 <div class="row">
-                    <div class="col-lg-2 text-right">
+                    <div class="col-lg-2 text-right divControl-label">
                         <asp:Label ID="lblId" runat="server" Text="ID : "></asp:Label>
                     </div>
                     <div class="col-lg-3">
-                        <asp:TextBox ID="txtId" Font-Bold="true" runat="server" Enabled="false" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtId" Font-Bold="true" runat="server" Enabled="false" CssClass="form-control divControl-textbox"></asp:TextBox>
                     </div>
                     <div>
-                    <asp:Label ID="lblApellido" runat="server" Text="Apellido : "></asp:Label>
+                    <asp:Label ID="lblApellido" runat="server" Text="Apellido : " CssClass="divControl-label"></asp:Label>
                     </div>
                     <div class="col-lg-3">
-                        <asp:TextBox ID="txtApellido" Font-Bold="true" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtApellido" Font-Bold="true" runat="server" CssClass="form-control divControl-textbox"></asp:TextBox>
                     </div>
-                    <div class="col-lg-2 text-right">
+                    <div class="col-lg-2 text-right divControl-label">
                         <asp:Label ID="lblNombre" runat="server" Text="Nombre : "></asp:Label>
                     </div>
                     <div class="col-lg-3">
-                        <asp:TextBox ID="txtNombre" Font-Bold="true" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtNombre" Font-Bold="true" runat="server" CssClass="form-control divControl-textbox"></asp:TextBox>
                     </div>
+                    </br>
                     <div>
-                        <asp:Button ID="btnConfirmar" Font-Bold="true" Text="Confirmar" runat="server" OnClick="btnConfirmar_Click"></asp:Button>
-                        <asp:Button ID="btnCancelar" Font-Bold="true" Text="Cancelar" runat="server" OnClick="btnCancelar_Click"></asp:Button>
+                        <asp:Button ID="btnConfirmar" Font-Bold="true" Text="Confirmar" runat="server" OnClick="btnConfirmar_Click" CssClass="btn btn-teal" />
+                        <asp:Button ID="btnCancelar" Font-Bold="true" Text="Cancelar" runat="server" OnClick="btnCancelar_Click" CssClass="btn btn-teal" />
                     </div>
                 </div>
             </div>
