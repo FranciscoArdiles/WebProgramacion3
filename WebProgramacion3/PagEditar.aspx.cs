@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,12 +16,13 @@ namespace WebProgramacion3
         {
             if (!IsPostBack)
             {
-                CargarDatosProfesores(); // Carga datos de profesores en el GridView
+                CargarDatosProfesores();
             }
         }
+
         private void CargarDatosProfesores()
         {
-            string pSQL = "select * from prueba.profesores";
+            string pSQL = "select * from trabajo.profesores";
 
             ManConex mconex = new ManConex();
             string cadConex = System.Configuration.ConfigurationManager.ConnectionStrings["ConStrMySQL"].ConnectionString;
@@ -40,8 +42,8 @@ namespace WebProgramacion3
                 gvProfesores.DataSource = dt;
                 gvProfesores.DataBind();
             }
-            //Session.Add("tabla", dt);
-            //DataTable vdt = (DataTable)ViewState["tablaTot"];
+            Session.Add("tabla", dt);
+            DataTable vdt = (DataTable)ViewState["tablaTot"];
         }
 
         protected void gvProfesores_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -61,11 +63,60 @@ namespace WebProgramacion3
                 divControl.Visible = true;
 
                 txtId.Text = nId;
-                txtNombre.Text = dv[0].Row[1].ToString() + " " + dv[0].Row[2].ToString();
+                txtApellido.Text = dv[0].Row[2].ToString();
+                txtNombre.Text = dv[0].Row[1].ToString();
 
 
             }
         }
-    }
 
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            string Apellido = txtApellido.Text;
+            string Nombre = txtNombre.Text;
+            int ID = Convert.ToInt32(txtId.Text);
+
+            string pSQL = "UPDATE trabajo.profesores SET APELLIDO = '" + Apellido + "', NOMBRE = '" + Nombre + "' WHERE ID = " + ID + ";";
+
+            ManConex mconex = new ManConex();
+            string cadConex = System.Configuration.ConfigurationManager.ConnectionStrings["ConStrMySQL"].ConnectionString;
+            mconex.cadenaConexion = cadConex;
+
+            MySqlConnection con = null;
+
+            try
+            {
+                con = mconex.getConexion();
+                MySqlCommand cmd = new MySqlCommand(pSQL, con);
+
+                //con.Open();
+                cmd.ExecuteNonQuery();
+
+
+                CargarDatosProfesores();
+                divDgv.Visible = true;
+                divControl.Visible = false;
+
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores: muestra el mensaje de error o realiza alguna acción adecuada
+                Response.Write("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            divDgv.Visible = true;
+            divControl.Visible = false;
+
+        }
+    }
 }

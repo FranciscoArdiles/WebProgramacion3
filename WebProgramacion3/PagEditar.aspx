@@ -15,33 +15,38 @@
             background-color: #333;
             overflow: hidden;
         }
+
         li.nav-item {
             float: left;
         }
-        li.nav-item a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        li.nav-item a:hover {
-            background-color: #555;
-        }
+
+            li.nav-item a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li.nav-item a:hover {
+                    background-color: #555;
+                }
         /* Elementos a la derecha */
         li.nav-item-right {
             float: right;
         }
-        li.nav-item-right a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        li.nav-item-right a:hover {
-            background-color: #555;
-        }
+
+            li.nav-item-right a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li.nav-item-right a:hover {
+                    background-color: #555;
+                }
         /* Pie de página */
         footer {
             background-color: #333;
@@ -63,24 +68,25 @@
     <form id="form1" runat="server">
         <div>
             <ul class="navbar">
+                <li class="nav-item"><a href="#">WebProgramacion3</a></li>
                 <li class="nav-item"><a href="PagAlumnos.aspx">Alumnos</a></li>
                 <li class="nav-item"><a href="PagEditar.aspx">Profesores</a></li>
-                <li class="nav-item-right"><a href="PagRegistro.aspx">Registrarse</a></li>
-                <li class="nav-item-right"><a href="PagInicio.aspx">Iniciar Sesión</a></li>
+                <li class="nav-item-right"><a href="PagInicio">Log Out</a></li>
+                <%--<li class="nav-item-right"><a href="PagInicio.aspx">Iniciar Sesión</a></li>--%>
             </ul>
         </div>
 
-        <!-- Contenido de la página de Edición de Profesores -->
+        <!-- Contenido de la página -->
         <div>
             <h2>Editar Profesores</h2>
-            
-            <!-- GridView para mostrar y editar los profesores -->
+        </div>
+            <!-- GridView de los profesores -->
             <div id="divDgv" runat="server" visible="true">
-                <asp:GridView ID="gvProfesores" runat="server" AutoGenerateColumns="false" OnRowEditing="gvProfesores_RowEditing" CssClass="gridview-style">
+                <asp:GridView ID="gvProfesores" runat="server" AutoGenerateColumns="false" OnRowCommand="gvProfesores_RowCommand" CssClass="gridview-style">
                     <Columns>
                         <asp:TemplateField HeaderText="Acciones">
                             <ItemTemplate>
-                                <asp:LinkButton ID="lnkEdit" runat="server" CommandName="Edit" Text="Editar" />
+                                <asp:LinkButton ID="lnkEdit" runat="server" CommandName="Editando" CommandArgument='<%#Eval("id") %>' Text="Editar" />
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="ID" HeaderText="ID" />
@@ -97,9 +103,10 @@
                         <asp:Label ID="lblId" runat="server" Text="ID : "></asp:Label>
                     </div>
                     <div class="col-lg-3">
-                        <asp:TextBox ID="txtId" Font-Bold="true" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtId" Font-Bold="true" runat="server" Enabled="false" CssClass="form-control"></asp:TextBox>
                     </div>
-                        <asp:Label ID="lblApellido" runat="server" Text="Apellido : "></asp:Label>
+                    <div>
+                    <asp:Label ID="lblApellido" runat="server" Text="Apellido : "></asp:Label>
                     </div>
                     <div class="col-lg-3">
                         <asp:TextBox ID="txtApellido" Font-Bold="true" runat="server" CssClass="form-control"></asp:TextBox>
@@ -110,10 +117,12 @@
                     <div class="col-lg-3">
                         <asp:TextBox ID="txtNombre" Font-Bold="true" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
-                    <div class="col-lg-2 text-right">
+                    <div>
+                        <asp:Button ID="btnConfirmar" Font-Bold="true" Text="Confirmar" runat="server" OnClick="btnConfirmar_Click"></asp:Button>
+                        <asp:Button ID="btnCancelar" Font-Bold="true" Text="Cancelar" runat="server" OnClick="btnCancelar_Click"></asp:Button>
+                    </div>
                 </div>
             </div>
-        </div>
 
         <footer>
             Trabajo Final de Programación

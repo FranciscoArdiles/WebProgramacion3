@@ -87,8 +87,8 @@
 <body>
      <div>
             <ul class="navbar">
-                <li class="nav-item"><a href="PagAlumnos.aspx">Alumnos</a></li>
-                <li class="nav-item"><a href="PagEditar.aspx">Profesores</a></li>
+                <li class="nav-item"><a href="#">WebProgramacion3</a></li>
+                <%--<li class="nav-item"><a href="PagEditar.aspx">Profesores</a></li>--%>
                 <li class="nav-item-right"><a href="PagRegistro.aspx">Registrarse</a></li>
                 <li class="nav-item-right"><a href="PagInicio.aspx">Iniciar Sesión</a></li>
             </ul>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebProgramacion3.Conexion;
 
 namespace WebProgramacion3
 {
@@ -12,36 +13,36 @@ namespace WebProgramacion3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!Page.IsPostBack)
             {
                 CargarDatosAlumnos();
             }
         }
         protected void CargarDatosAlumnos()
         {
-            //string pSQL = "select * from prueba.alumnos";
+            string pSQL = "select * from trabajo.alumnos";
 
-            //ManConex mconex = new ManConex();
-            //string cadConex = System.Configuration.ConfigurationManager.ConnectionStrings["ConStrMySQL"].ConnectionString;
+            ManConex mconex = new ManConex();
+            string cadConex = System.Configuration.ConfigurationManager.ConnectionStrings["ConStrMySQL"].ConnectionString;
 
-            //if (cadConex.Equals(""))
-            //{
-            //    return;
-            //}
+            if (cadConex.Equals(""))
+            {
+                return;
+            }
 
-            //mconex.cadenaConexion = cadConex;
+            mconex.cadenaConexion = cadConex;
 
-            //DataTable dt = mconex.ejecutarSelect(pSQL) as DataTable;
+            DataTable dt = mconex.ejecutarSelect(pSQL) as DataTable;
 
-            //if (dt != null && dt.Rows.Count > 0 && dt.Rows[0][0] != DBNull.Value)
-            //{
-            //    ViewState.Add("tabla", dt);
-            //    ViewState.Add("NROFILA", 0);
+            if (dt != null && dt.Rows.Count > 0 && dt.Rows[0][0] != DBNull.Value)
+            {
+                ViewState.Add("tabla", dt);
+                ViewState.Add("NROFILA", 0);
 
-            //    actualizarControles(0);
-            //}
-            //else
-            //    ViewState["NROFILA"] = null;
+                actualizarControles(0);
+            }
+            else
+                ViewState["NROFILA"] = null;
         }
         protected void actualizarControles(int index = 0)
         {
@@ -89,7 +90,7 @@ namespace WebProgramacion3
         }
         protected void btnLast_Click(object sender, EventArgs e)
         {
-            actualizarControles(500000);
+            actualizarControles(5000);
         }
     }
 

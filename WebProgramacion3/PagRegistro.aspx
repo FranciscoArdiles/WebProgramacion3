@@ -14,33 +14,38 @@
             background-color: #333;
             overflow: hidden;
         }
+
         li.nav-item {
             float: left;
         }
-        li.nav-item a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        li.nav-item a:hover {
-            background-color: #555;
-        }
+
+            li.nav-item a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li.nav-item a:hover {
+                    background-color: #555;
+                }
         /* Elementos a la derecha */
         li.nav-item-right {
             float: right;
         }
-        li.nav-item-right a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        li.nav-item-right a:hover {
-            background-color: #555;
-        }
+
+            li.nav-item-right a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li.nav-item-right a:hover {
+                    background-color: #555;
+                }
 
         /* Pie de pagina */
         footer {
@@ -78,11 +83,11 @@
             font-size: x-large;
             margin: 20px auto;
         }
-        .btn-teal:hover {
-            background-color: #00b3b3;
-            border-color: #00b3b3;
-        }
 
+            .btn-teal:hover {
+                background-color: #00b3b3;
+                border-color: #00b3b3;
+            }
     </style>
 </head>
 <body>
@@ -91,8 +96,8 @@
         <!-- Barra de navegación -->
         <div>
             <ul class="navbar">
-                <li class="nav-item"><a href="PagAlumnos.aspx">Alumnos</a></li>
-                <li class="nav-item"><a href="PagEditar.aspx">Profesores</a></li>
+                <li class="nav-item"><a href="#">WebProgramacion3</a></li>
+                <%--<li class="nav-item"><a href="PagEditar.aspx">Profesores</a></li>--%>
                 <li class="nav-item-right"><a href="PagRegistro.aspx">Registrarse</a></li>
                 <li class="nav-item-right"><a href="PagInicio.aspx">Iniciar Sesión</a></li>
             </ul>
@@ -102,6 +107,12 @@
         <div class="login-container">
             <h2>Registrarse</h2>
             <asp:Label ID="lblMensaje" runat="server" Text="" CssClass="text-danger text-center" Visible="false" />
+            <div class="form-group">
+                <div style="display: inline-block; width: 190px; text-align: right; margin-right: 10px;">
+                    <label for="txtNombre">Apellido y Nombre:</label>
+                </div>
+                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" />
+            </div>
             <div class="form-group">
                 <div style="display: inline-block; width: 190px; text-align: right; margin-right: 10px;">
                     <label for="txtUsername">Usuario:</label>
